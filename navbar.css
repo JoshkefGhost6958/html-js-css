@@ -1,0 +1,218 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} 
+body{
+  background-image: url('bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width:100vw;
+}
+
+
+#navbar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#navbar ul{
+  display: flex;
+}
+#navbar ul li{
+  list-style: none;
+  padding: 10px 10px;
+  color: white;
+}
+#navbar ul li a{
+  text-decoration: none;
+  color: white;
+  transition: color .2s ease-in-out;
+  position: relative;
+  transition:font-weight .15s ease-in-out;
+}
+#navbar ul li a:hover{
+  font-weight: 500;
+}
+
+#navbar ul li a::after{
+  content: '';
+  width: 0;
+  height: 2px;
+  position:absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: cyan;
+  transition: width .3s ease-in-out;
+}
+
+#navbar ul li a:hover::after{
+  width: 80%;
+}
+
+
+#drop-down-toggle{
+  height: 20px;
+  width: 20px;  
+  background-color: white;
+  display: none;
+  pointer-events: visible;
+}
+
+#drop-down-menu{
+  position:absolute;
+  right:1.5rem;
+  top:60px;
+  width:200px;
+  height: 180px;
+  color: white;
+  display: none;
+  background-color: transparent;
+  backdrop-filter: blur(500px);
+  transition: height .2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+ }
+
+#drop-down-menu ul li{
+  display: flex;
+  justify-content: center;
+}
+#drop-down-menu ul li a{
+  color: white;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+#drop-down-menu ul li a:hover{
+  color: cyan;
+}
+@media (max-width:699px) {
+  #navbar a,
+  #navbar ul{
+    display: none;
+  }
+  #drop-down-toggle{
+    display: grid;
+    transform: translateX(70px);
+  }
+}
+@media (max-width:700px) {
+  #drop-down-menu{
+    display: none;
+  }
+  
+}
+
+#drop-down-menu ul{
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-15px);
+}
+#drop-down-menu ul li{
+  padding: 2px 2px;
+  outline: none;
+  border-bottom: 1px rgba(255, 255, 255, 0.25);
+}
+
+.call-to-action:hover{
+  opacity: 0.8;
+}
+#navbar-tag{
+  color: white;
+  position: absolute;
+  right: 1.5rem;
+  top:30px;
+  opacity:0.7;
+  font-size: 12px;
+  user-select: none;
+  padding-left: 6px;
+  padding-right: 6px;
+  background-color: rgba(255, 255, 255, 0.25);
+  display: none;
+}
+
+/*==========================*/
+
+.content-pane{
+  height: 100vh;
+  width: 100vw;
+}
+.welcome-box{
+  height: 100vh;
+  position: relative;
+  display: flex;
+}
+.box-b,
+.welcome-box .box-a{
+  height: 50%;
+  width: 100%;
+}
+.box-a{
+  display: grid;
+}
+.box-a div h1{
+  font-size: 50px;
+  font-weight: 600;
+  user-select: none;
+}
+.box-a div h2{
+  font-size: 30px;
+  font-weight: 400;
+  user-select: none;
+}
+.box-a div h3{
+  font-weight: 400;
+  font-size: 30px;
+}
+.box-a div h3 a{
+  padding-right:15px;
+  padding-left: 15px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius:30px;
+  font-size: 25px;
+}
+
+.box-a div h3 a:hover{
+  background-color: white;
+}
+
+.box-b{
+  gap: 2rem;
+  padding-left: 15px;
+  position: relative;
+  left: 0;
+  top:50;
+  display: flex;
+  backdrop-filter: blur(4px);
+}
+#slideshow{
+  position:absolute;
+  top:10%;
+  left: 10%;
+  transform: translate(0%,0%);
+  user-select: none;
+}
+#slideshow .image{
+  height:48rem;
+  width: 30vmin;
+  object-position: cover;
+  object-position: 100%, 50%;
+}
+
+.box-b img{
+  border-radius: 10px;
+}
+.hero{
+  background-image: url('ps5.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50%;
+  display: none;
+  width: 50%;
+}
